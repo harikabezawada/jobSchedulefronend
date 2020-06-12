@@ -1,0 +1,88 @@
+<div class="card  fullCard "  [ngClass]="cardClass">
+  <div class="card-header" style="background-color: #514879;" >
+
+    <span style="color:#ffff"> Schedules List </span>
+   
+    <div class="card-header-right">
+    
+    </div>
+  </div>
+
+  
+    <div class="card-body" [ngClass]="blockClass">
+      <div>
+        <button class="btn btn-primary btn-sm" style="float: right;"(click)="showaddNoteModal()">Schedule Task&nbsp;<i class="fa fa-plus" ></i></button>
+      </div><br>
+      <table class="table  table-bordered" style="width:70%;margin-left: 15%;">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">S.NO</th>
+            <th scope="col">Job name</th>
+            <th scope="col">Scheduled At</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of schedulesList">
+            <th scope="row">1</th>
+            <td>{{job.jobName}}</td>
+            <td>{{formatDate(job.scheduleDate)}}</td>
+            
+          </tr>
+       
+        </tbody>
+        </table>
+       
+    </div>
+    
+</div>
+
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header " style="background-color: #0d416b;color: #ffffff;border-top-left-radius: 0rem !important;
+      border-top-right-radius: 0rem !important; ">
+        <h4 class="modal-title">Schedule Task</h4>
+        <button type="button " class="close " aria-label="Close " (click)="Cancel()" style="margin-right: -14px;color: #ffffff;font-size:
+      1.25rem ">
+       
+       <span aria-hidden="true ">&times;</span>
+      </button>  </div> 
+        <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12">
+              <label><strong>job Name :</strong></label>
+              <input type="text" name="jname" [(ngModel)]="jobName">
+              </div>
+          </div>
+					<div class="row">
+
+					<div class="col-md-6">
+            <label><strong>Date :</strong></label>
+            <input type="Date" class="form-control" placeholder="username" name="job" [(ngModel)]="jobDate">
+
+          </div>
+          <div class="col-md-6">
+            <label><strong>Time :</strong></label>
+            <input type="time" class="form-control" placeholder="password" name="time" [(ngModel)]="jobTime">
+
+          </div>
+
+
+						
+					</div>
+				<br><br>
+					<div class="form-group">
+            <button type="button" class="btn btn-danger btn-sm" (click)="Cancel()" style="float:right">Cancel</button>&nbsp;&nbsp;
+
+            <button type="button" class="btn btn-primary btn-sm" (click)="ScheduleTask()" style="float:right">Save</button>
+
+					</div>
+        </form>
+      </div>
+    </div></div></div>

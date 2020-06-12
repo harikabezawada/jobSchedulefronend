@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <!-- <div class="app-sidebar" data-active-color="white" data-background-color="black" data-image="assets/img/sidebar-bg/01.jpg" style="width:278px"> -->
+      
+      <nav class="navbar navbar-expand navbar-dark bg-dark" >
+          <div class="navbar-nav" >
+              <!-- <a class="nav-item nav-link text-white" routerLink="dashboard">Dashboard</a>
+              <a class="nav-item nav-link text-white" routerLink="audits" *ngIf="currentUser.role=='Auditor'">Audits</a>
+              <a class="nav-item nav-link pull-right"  style="margin-left:70rem" (click)="logout()"><i class="fa fa-sign-out fa-align-right" aria-hidden="true" style="color: #ffffff;float:right;font-size: 30px;" ></i>
+              </a> -->
+              <li>
+                <a [routerLink]="['/login']" style="margin-left:80rem;">
+                  <i  class="fa fa-sign-out">LogOut</i> 
+                </a>
+                
+              </li>
+          </div>
+      </nav>
+  <div class="main-panel">
+      <div class="main-content">
+          <div class="content-wrapper" style="margin-top:70px;">
+              <div class="container-fluid" >
+                  <router-outlet></router-outlet>
+              </div>
+          </div>
+      </div>
+     
+  </div>
+ 
+  <!-- <app-customizer></app-customizer> -->
+</div>
